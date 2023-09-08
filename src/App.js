@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import { SideBar } from './components/sidebar/SideBar';
+import { TopBar } from './components/topbar/TopBar';
 
 function App() {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const handleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <TopBar handleCollapse={handleCollapse} />
+      <SideBar collapsed={collapsed} />
+      {/* <LeftMenu/> */}
+      </BrowserRouter>
     </div>
   );
 }
