@@ -1,0 +1,96 @@
+.task-container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 8px 0px;
+  /* margin-right: 30px; */
+  border-bottom: 1px solid #f1f1f1;
+
+}
+
+.task-item {
+  display: flex;
+}
+
+.round-checkbox-label {
+  position: relative;
+}
+
+.round-checkbox {
+  display: none;
+}
+
+.checkmark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #d1453b;
+  margin-right: 5px;
+  vertical-align: middle;
+  background-color: rgba(209, 69, 59, 0.1);
+}
+
+.checkmark i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #d1453b;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.round-checkbox:checked + .checkmark {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.round-checkbox:checked + .checkmark i {
+  opacity: 1;
+}
+
+.round-checkbox-label:hover .checkmark i {
+  opacity: 1;
+  background-color: rgba(209, 69, 59, 0.1);
+
+}
+
+.task-item-content {
+  font-size: 14px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  color: #d1453b;
+  font-size: 12px;
+  gap: 4px;
+}
+
+.task-item-action {
+  display: none;
+}
+
+.task-container:hover .task-item-action {
+  display: flex;
+}
+
+.task-item-action .icon-action:hover {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.task-item-action .icon-action {
+  height: 22px;
+  width: 24px;
+  padding: 2px;
+  color: grey;
+  margin-left: 10px;
+}

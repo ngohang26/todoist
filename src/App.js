@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import { SideBar } from './components/sidebar/SideBar';
-import { TopBar } from './components/topbar/TopBar';
+import { Content } from './components/content/Content';
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -13,9 +12,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <TopBar handleCollapse={handleCollapse} />
-      <SideBar collapsed={collapsed} />
-      {/* <LeftMenu/> */}
+      <Content/>
       </BrowserRouter>
     </div>
   );
